@@ -6,4 +6,4 @@ Leonardo Duarte e
 Neilson Silva 
 
 Professor: 
-Bruno
+Bruno Queiroz
