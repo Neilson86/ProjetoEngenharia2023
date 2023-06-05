@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JInternalFrame;
 
-public class GerirAtendente extends JInternalFrame {
+public class GerirCurso extends JInternalFrame {
 
 	/**
 	 * Launch the application.
@@ -13,7 +13,7 @@ public class GerirAtendente extends JInternalFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GerirAtendente frame = new GerirAtendente();
+					GerirCurso frame = new GerirCurso();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -25,7 +25,7 @@ public class GerirAtendente extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public GerirAtendente() {
+	public GerirCurso() {
 		setBounds(100, 100, 450, 300);
 
 	}

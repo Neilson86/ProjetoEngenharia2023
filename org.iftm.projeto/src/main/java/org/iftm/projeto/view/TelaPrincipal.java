@@ -10,6 +10,9 @@ import javax.swing.JInternalFrame;
 import javax.swing.JToolBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JDesktopPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaPrincipal {
 
@@ -47,6 +50,9 @@ public class TelaPrincipal {
 		frmSchoolRobots.setBounds(100, 100, 394, 492);
 		frmSchoolRobots.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		final JDesktopPane desktopPane = new JDesktopPane();
+		frmSchoolRobots.getContentPane().add(desktopPane, BorderLayout.CENTER);
+		
 		JMenuBar barramenu = new JMenuBar();
 		frmSchoolRobots.setJMenuBar(barramenu);
 		
@@ -66,6 +72,14 @@ public class TelaPrincipal {
 		barramenu.add(ATENDENTE);
 		
 		JMenuItem CADASTRAR_CURSO = new JMenuItem("CADASTRAR CURSO");
+		CADASTRAR_CURSO.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				GerirCurso tela = new GerirCurso();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		ATENDENTE.add(CADASTRAR_CURSO);
 		
 		JMenuItem CADASTRAR_PROFESSOR = new JMenuItem("CADASTRAR PROFESSOR");
@@ -85,6 +99,8 @@ public class TelaPrincipal {
 		
 		JMenuItem REALIZAR_MATRICULA = new JMenuItem("REALIZAR MATRICULA");
 		ALUNO.add(REALIZAR_MATRICULA);
+		
+		
 	}
 
 }
