@@ -60,9 +60,23 @@ public class TelaPrincipal {
 		barramenu.add(COORDENADOR);
 		
 		JMenuItem GERIR_PROFESSORES = new JMenuItem("GERIR PROFESSOR");
+		GERIR_PROFESSORES.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaProfessores tela = new TelaProfessores();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		COORDENADOR.add(GERIR_PROFESSORES);
 		
 		JMenuItem CADASTRAR_DISCIPLINAS = new JMenuItem("CADASTAR DISCIPLINA");
+		CADASTRAR_DISCIPLINAS.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaDisciplinas tela = new TelaDisciplinas();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		COORDENADOR.add(CADASTRAR_DISCIPLINAS);
 		
 		JMenuItem GERIR_DADOS_ALUNOS = new JMenuItem("GERIR DADOS ALUNO");
