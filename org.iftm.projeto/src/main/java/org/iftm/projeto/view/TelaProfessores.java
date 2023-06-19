@@ -15,9 +15,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class TelaProfessores extends JInternalFrame {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textNOME;
+	private JTextField textCPF;
+	private JTextField textDISCIPLINA;
 
 	/**
 	 * Launch the application.
@@ -59,25 +59,25 @@ public class TelaProfessores extends JInternalFrame {
 		lblNOME.setBounds(10, 26, 46, 14);
 		painelCampos.add(lblNOME);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(92, 23, 271, 20);
-		painelCampos.add(textField);
+		textNOME = new JTextField();
+		textNOME.setColumns(10);
+		textNOME.setBounds(92, 23, 271, 20);
+		painelCampos.add(textNOME);
 		
 		JLabel lblCPF = new JLabel("CPF : ");
 		lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCPF.setBounds(10, 60, 46, 14);
 		painelCampos.add(lblCPF);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(92, 57, 271, 20);
-		painelCampos.add(textField_1);
+		textCPF = new JTextField();
+		textCPF.setColumns(10);
+		textCPF.setBounds(92, 57, 271, 20);
+		painelCampos.add(textCPF);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(161, 95, 202, 20);
-		painelCampos.add(textField_2);
+		textDISCIPLINA = new JTextField();
+		textDISCIPLINA.setColumns(10);
+		textDISCIPLINA.setBounds(161, 95, 202, 20);
+		painelCampos.add(textDISCIPLINA);
 		
 		JLabel lblDISCIPLINACADASTRADA = new JLabel("DISCIPLINA CADASTRADA : ");
 		lblDISCIPLINACADASTRADA.setFont(new Font("Tahoma", Font.PLAIN, 11));

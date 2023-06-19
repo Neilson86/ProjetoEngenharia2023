@@ -129,14 +129,14 @@ public class TelaAlunos extends JInternalFrame {
 		});
 		btnSALVAR.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
-		JButton btnCadastrar = new JButton("CADASTRAR");
-		btnCadastrar.addActionListener(new ActionListener() {
+		JButton btnCADASTRAR = new JButton("CADASTRAR");
+		btnCADASTRAR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnCadastrar.setBounds(226, 398, 109, 23);
-		getContentPane().add(btnCadastrar);
-		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnCADASTRAR.setBounds(226, 398, 109, 23);
+		getContentPane().add(btnCADASTRAR);
+		btnCADASTRAR.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 	}
 }

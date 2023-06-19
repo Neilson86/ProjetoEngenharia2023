@@ -80,6 +80,13 @@ public class TelaPrincipal {
 		COORDENADOR.add(CADASTRAR_DISCIPLINAS);
 		
 		JMenuItem GERIR_DADOS_ALUNOS = new JMenuItem("GERIR DADOS ALUNO");
+		GERIR_DADOS_ALUNOS.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaAlunos tela = new TelaAlunos();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		COORDENADOR.add(GERIR_DADOS_ALUNOS);
 		
 		JMenu ATENDENTE = new JMenu("ATENDENTE");
