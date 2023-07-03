@@ -2,7 +2,9 @@ package org.iftm.projeto.view;
 
 import java.awt.EventQueue;
 
+import javax.swing.JInternalFrame;
 import javax.swing.JFrame;
+import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EtchedBorder;
@@ -13,12 +15,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.DefaultComboBoxModel;
 
-public class Aluno1 {
-
-	private JFrame frame;
-	private JTextField textField;
+public class TelaConsultarCurso extends JInternalFrame {
 
 	/**
 	 * Launch the application.
@@ -27,8 +25,8 @@ public class Aluno1 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Aluno1 window = new Aluno1();
-					window.frame.setVisible(true);
+					TelaConsultarCurso frame = new TelaConsultarCurso();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,38 +35,25 @@ public class Aluno1 {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
-	public Aluno1() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+	public TelaConsultarCurso() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(null);
+		
+		JLabel lblConsultarCurso = new JLabel("CONSULTAR CURSO");
+		lblConsultarCurso.setBounds(0, 0, 438, 20);
+		lblConsultarCurso.setHorizontalAlignment(SwingConstants.CENTER);
+		lblConsultarCurso.setFont(new Font("Tahoma", Font.BOLD, 16));
+		getContentPane().add(lblConsultarCurso);
 		
 		JPanel painelCampos = new JPanel();
+		painelCampos.setBounds(0, 20, 438, 251);
 		painelCampos.setLayout(null);
 		painelCampos.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "CURSOS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		painelCampos.setBounds(24, 49, 383, 187);
-		frame.getContentPane().add(painelCampos);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(384, 37, 96, 118);
-		painelCampos.add(panel);
-		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(161, 187, 202, 20);
-		painelCampos.add(textField);
+		getContentPane().add(painelCampos);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"COMPUTAÇAO", "LOGISTICA", "MARKETING"}));
 		comboBox.setBounds(47, 37, 283, 22);
 		painelCampos.add(comboBox);
 		
@@ -79,12 +64,7 @@ public class Aluno1 {
 		JButton btnComfirmar = new JButton("COMFIRMAR");
 		btnComfirmar.setBounds(221, 124, 109, 23);
 		painelCampos.add(btnComfirmar);
-		
-		JLabel lblConsultarCurso = new JLabel("CONSULTAR CURSO");
-		lblConsultarCurso.setHorizontalAlignment(SwingConstants.CENTER);
-		lblConsultarCurso.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblConsultarCurso.setBounds(10, 11, 424, 20);
-		frame.getContentPane().add(lblConsultarCurso);
+
 	}
 
 }

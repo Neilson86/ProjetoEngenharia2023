@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class TelaProfessores extends JInternalFrame {
-	private JTextField textNOME;
+	private JTextField textFieldNOME;
 	private JTextField textCPF;
 	private JTextField textDISCIPLINA;
 
@@ -59,10 +59,10 @@ public class TelaProfessores extends JInternalFrame {
 		lblNOME.setBounds(10, 26, 46, 14);
 		painelCampos.add(lblNOME);
 		
-		textNOME = new JTextField();
-		textNOME.setColumns(10);
-		textNOME.setBounds(92, 23, 271, 20);
-		painelCampos.add(textNOME);
+		textFieldNOME = new JTextField();
+		textFieldNOME.setColumns(10);
+		textFieldNOME.setBounds(92, 23, 271, 20);
+		painelCampos.add(textFieldNOME);
 		
 		JLabel lblCPF = new JLabel("CPF : ");
 		lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 11));

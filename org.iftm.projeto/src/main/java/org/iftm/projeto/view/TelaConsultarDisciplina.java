@@ -2,22 +2,19 @@ package org.iftm.projeto.view;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EtchedBorder;
 import java.awt.Color;
-import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
-public class Aluno2 {
-
-	private JFrame frame;
+public class TelaConsultarDisciplina extends JInternalFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -30,8 +27,8 @@ public class Aluno2 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Aluno2 window = new Aluno2();
-					window.frame.setVisible(true);
+					TelaConsultarDisciplina frame = new TelaConsultarDisciplina();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,29 +37,24 @@ public class Aluno2 {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
-	public Aluno2() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+	public TelaConsultarDisciplina() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(5, 0, 434, 266);
+		getContentPane().add(panel);
 		
 		JPanel painelCampos = new JPanel();
 		painelCampos.setLayout(null);
 		painelCampos.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "DISCIPLINAS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		painelCampos.setBounds(0, 31, 424, 235);
-		frame.getContentPane().add(painelCampos);
+		panel.add(painelCampos);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"BANCO DE DADOS ", "ENGENHARIA", "PROGRAMAÇAO", "DIDATICA", "LIBRAS ", "MATEMATICA DISCRETA ", "ROBOTICA ", "HISTORIA DA EDUÇAÇAO ", "FILOSOFIA ", "SOCIOLOGIA"}));
 		comboBox.setBounds(74, 11, 283, 22);
 		painelCampos.add(comboBox);
 		
@@ -79,20 +71,20 @@ public class Aluno2 {
 		painelCampos.add(lblNewLabel);
 		
 		textField = new JTextField();
+		textField.setColumns(10);
 		textField.setBounds(129, 41, 228, 20);
 		painelCampos.add(textField);
-		textField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("ANO/SEMESTRE");
 		lblNewLabel_1.setBounds(10, 69, 89, 14);
 		painelCampos.add(lblNewLabel_1);
 		
 		textField_1 = new JTextField();
+		textField_1.setColumns(10);
 		textField_1.setBounds(129, 66, 228, 20);
 		painelCampos.add(textField_1);
-		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("SITUAÇAO/FALTAS");
+		JLabel lblNewLabel_2 = new JLabel("SITUA\u00C3\u2021AO/FALTAS");
 		lblNewLabel_2.setBounds(10, 100, 109, 14);
 		painelCampos.add(lblNewLabel_2);
 		
@@ -114,6 +106,8 @@ public class Aluno2 {
 		lblConsultarDisciplina.setHorizontalAlignment(SwingConstants.CENTER);
 		lblConsultarDisciplina.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblConsultarDisciplina.setBounds(10, 0, 424, 20);
-		frame.getContentPane().add(lblConsultarDisciplina);
+		panel.add(lblConsultarDisciplina);
+
 	}
+
 }

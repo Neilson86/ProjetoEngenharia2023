@@ -113,12 +113,34 @@ public class TelaPrincipal {
 		barramenu.add(ALUNO);
 		
 		JMenuItem CONSULTAR_DISCIPLINA = new JMenuItem("CONSULTAR DISCIPLINA");
+		CONSULTAR_DISCIPLINA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaConsultarDisciplina tela = new TelaConsultarDisciplina();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		ALUNO.add(CONSULTAR_DISCIPLINA);
 		
 		JMenuItem CONSULTAR_CURSO = new JMenuItem("CONSULTAR CURSO");
+		CONSULTAR_CURSO.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaConsultarCurso tela = new TelaConsultarCurso();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		ALUNO.add(CONSULTAR_CURSO);
 		
+		
 		JMenuItem REALIZAR_MATRICULA = new JMenuItem("REALIZAR MATRICULA");
+		REALIZAR_MATRICULA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 TelaRealizarMatricula tela = new TelaRealizarMatricula();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		ALUNO.add(REALIZAR_MATRICULA);
 		
 		
