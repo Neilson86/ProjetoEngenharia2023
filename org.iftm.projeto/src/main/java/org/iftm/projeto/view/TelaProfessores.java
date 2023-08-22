@@ -13,11 +13,11 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class TelaProfessores extends JInternalFrame {
 	private JTextField textFieldNOME;
 	private JTextField textCPF;
-	private JTextField textDISCIPLINA;
 
 	/**
 	 * Launch the application.
@@ -74,11 +74,6 @@ public class TelaProfessores extends JInternalFrame {
 		textCPF.setBounds(92, 57, 271, 20);
 		painelCampos.add(textCPF);
 		
-		textDISCIPLINA = new JTextField();
-		textDISCIPLINA.setColumns(10);
-		textDISCIPLINA.setBounds(161, 95, 202, 20);
-		painelCampos.add(textDISCIPLINA);
-		
 		JLabel lblDISCIPLINACADASTRADA = new JLabel("DISCIPLINA CADASTRADA : ");
 		lblDISCIPLINACADASTRADA.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblDISCIPLINACADASTRADA.setBounds(10, 98, 141, 14);
@@ -86,7 +81,7 @@ public class TelaProfessores extends JInternalFrame {
 		
 		JButton btnSALVAR = new JButton("SALVAR");
 		btnSALVAR.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnSALVAR.setBounds(327, 241, 89, 23);
+		btnSALVAR.setBounds(274, 148, 89, 23);
 		painelCampos.add(btnSALVAR);
 		
 		JButton btnEDITAR = new JButton("EDITAR");
@@ -95,18 +90,12 @@ public class TelaProfessores extends JInternalFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnEDITAR.setBounds(107, 241, 89, 23);
+		btnEDITAR.setBounds(175, 148, 89, 23);
 		painelCampos.add(btnEDITAR);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(384, 37, 96, 93);
-		painelCampos.add(panel);
-		
-		JLabel lblFoto = new JLabel("FOTO");
-		lblFoto.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblFoto.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFoto.setBounds(404, 14, 45, 13);
-		painelCampos.add(lblFoto);
+		JComboBox cbDisciplinas = new JComboBox();
+		cbDisciplinas.setBounds(153, 94, 210, 22);
+		painelCampos.add(cbDisciplinas);
 
 	}
 }
