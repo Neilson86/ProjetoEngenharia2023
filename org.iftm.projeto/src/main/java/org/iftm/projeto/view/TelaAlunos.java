@@ -56,7 +56,7 @@ public class TelaAlunos extends JInternalFrame {
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(92, 23, 271, 20);
+		textField.setBounds(92, 23, 393, 20);
 		painelCampos.add(textField);
 		
 		JLabel lblCPF = new JLabel("CPF : ");
@@ -66,28 +66,18 @@ public class TelaAlunos extends JInternalFrame {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(92, 57, 271, 20);
+		textField_1.setBounds(92, 57, 393, 20);
 		painelCampos.add(textField_1);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(102, 95, 261, 20);
+		textField_2.setBounds(102, 95, 383, 20);
 		painelCampos.add(textField_2);
 		
 		JLabel lblEmail = new JLabel("E-MAIL : ");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblEmail.setBounds(10, 98, 141, 14);
 		painelCampos.add(lblEmail);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(384, 37, 96, 118);
-		painelCampos.add(panel);
-		
-		JLabel lblFoto = new JLabel("FOTO");
-		lblFoto.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFoto.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblFoto.setBounds(404, 14, 45, 13);
-		painelCampos.add(lblFoto);
 		
 		JLabel lblDataNascimento = new JLabel("DATA NASCIMENTO : ");
 		lblDataNascimento.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -96,7 +86,7 @@ public class TelaAlunos extends JInternalFrame {
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(161, 143, 202, 20);
+		textField_3.setBounds(324, 143, 161, 20);
 		painelCampos.add(textField_3);
 		
 		JLabel lblDataMatricula = new JLabel("DATA MATRICULA  : ");
@@ -106,7 +96,7 @@ public class TelaAlunos extends JInternalFrame {
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(161, 187, 202, 20);
+		textField_4.setBounds(324, 187, 161, 20);
 		painelCampos.add(textField_4);
 		
 		JLabel lblAlunos = new JLabel("ALUNOS");
