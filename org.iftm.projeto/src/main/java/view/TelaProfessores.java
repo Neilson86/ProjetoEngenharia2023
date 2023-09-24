@@ -1,4 +1,4 @@
-package org.iftm.projeto.view;
+package view;
 
 import java.awt.EventQueue;
 
