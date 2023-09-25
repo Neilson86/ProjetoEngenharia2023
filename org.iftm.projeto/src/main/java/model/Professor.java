@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +14,9 @@ public class Professor implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_Professor")
 	private Integer idProfessor;
+	
 	private String nome;
 	private Integer CPF;
 	private String Senha;

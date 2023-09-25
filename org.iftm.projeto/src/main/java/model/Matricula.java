@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +14,8 @@ public class Matricula implements Serializable{
     
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_matricula")
+	
 	private Integer idMatricula;
 	private String nome;
 	private Float nota;

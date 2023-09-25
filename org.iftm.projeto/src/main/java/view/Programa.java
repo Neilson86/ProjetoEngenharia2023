@@ -1,10 +1,12 @@
 package view;
+import java.time.Instant;
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-
-import model.Alunos;
+import model.Aluno;
 import model.Coordenador;
 import model.Curso;
 import model.Disciplina;
@@ -13,9 +15,9 @@ import model.Professor;
 
 public class Programa {
 	public static void main(String[] args) {
-		Alunos a1 = new Alunos("Alessandro Belizário",1023325689, "alessandrobelizario@gmail.com", 10/02/1998, 21/12/2020);
-		Alunos a2 = new Alunos("Leonardo Duarte", 564231895, "leonardoduarte@gmail.com", 13/04/2002, 20/12/2020);
-		Alunos a3 = new Alunos("Neilson Silva", 2013368975, "neilsonsilva@gmail.com", 22/06/1998, 21/12/2020);
+		Aluno a1 = new Aluno("Alessandro Belizário","1023325689", "alessandrobelizario@gmail.com", Instant.parse("2007-12-03T10:15:30.00Z"), "01");
+		Aluno a2 = new Aluno("Leonardo Duarte", "564231895", "leonardoduarte@gmail.com", Instant.parse("2007-12-03T10:15:30.00Z"), "02");
+		Aluno a3 = new Aluno("Neilson Silva", "2013368975", "neilsonsilva@gmail.com", Instant.parse("2007-12-03T10:15:30.00Z"), "03");
 		
 		Coordenador co1 = new Coordenador(null, "Marcos Antônio", 222336954, "coord1");
 		Coordenador co2 = new Coordenador(null, "André Santos", 1335216635, "coord2");

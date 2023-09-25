@@ -1,6 +1,9 @@
 package model;
 
 import java.io.Serializable;
+import java.sql.Time;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +15,16 @@ public class Disciplina implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_Disciplina")
+	
 	private Integer idDisciplina;
 	private String nome;
-	private Float horario;
+	private Time horario;
 	// private Integer idCurso;
 	// private Integer idProfessor;
 	// private Integer idCurso;
 
-	public Disciplina(Integer idDisciplina, String nome, Float horario) {
+	public Disciplina(Integer idDisciplina, String nome, Time horario) {
 		super();
 		this.idDisciplina = idDisciplina;
 		this.nome = nome;
@@ -46,11 +51,11 @@ public class Disciplina implements Serializable{
 		this.nome = nome;
 	}
 
-	public Float getHorario() {
+	public Time getHorario() {
 		return horario;
 	}
 
-	public void setHorario(Float horario) {
+	public void setHorario(Time horario) {
 		this.horario = horario;
 	}
 
