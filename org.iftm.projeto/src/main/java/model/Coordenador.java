@@ -30,7 +30,7 @@ public class Coordenador implements Serializable{
 		Senha = senha;
 	}
 	public Coordenador() {
-
+	
 	}
 	public Integer getIdCoordenador() {
 		return idCoordenador;
