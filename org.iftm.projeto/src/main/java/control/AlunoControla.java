@@ -31,10 +31,10 @@ public class AlunoControla {
 		 
 	}
 	
-	public void alterar(coordenador) {
+	public void alterar(Aluno obj) {
 		try {
             em.getTransaction().begin();
-            em.merge();
+            em.merge(obj);
             em.getTransaction().commit();
          } catch (Exception ex) {
             ex.printStackTrace();
@@ -54,7 +54,7 @@ public class AlunoControla {
 	}
 	
 	
-	public Coordenador buscarPorId(Integer id) {
+	public Aluno buscarPorId(Integer id) {
 		return em.find(Aluno.class, id);
 	}
 	

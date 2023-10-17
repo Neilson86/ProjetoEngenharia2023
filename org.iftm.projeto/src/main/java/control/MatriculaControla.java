@@ -53,7 +53,7 @@ public class MatriculaControla {
 	}
 	
 	
-	private Matricula buscarPorId(Integer id) {
+	public Matricula buscarPorId(Integer id) {
 		return em.find(Matricula.class, id);
 	}
 	

@@ -53,7 +53,7 @@ public class DisciplinaControla {
 	}
 	
 	
-	private Disciplina buscarPorId(Integer id) {
+	public Disciplina buscarPorId(Integer id) {
 		return em.find(Disciplina.class, id);
 	}
 	

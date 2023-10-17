@@ -53,7 +53,7 @@ public class ProfessorControla {
 	}
 	
 	
-	private Professor buscarPorId(Integer id) {
+	public Professor buscarPorId(Integer id) {
 		return em.find(Professor.class, id);
 	}
 	
