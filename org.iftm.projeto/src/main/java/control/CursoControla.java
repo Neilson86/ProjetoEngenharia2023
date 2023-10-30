@@ -14,8 +14,8 @@ public class CursoControla {
 	public CursoControla() {
 		super();
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("secretariaiftm2");
-		emf.createEntityManager();
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("projeto");
+		em = emf.createEntityManager();
 	}
 	
 	public void inserir(Curso obj) {

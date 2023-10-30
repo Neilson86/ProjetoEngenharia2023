@@ -17,7 +17,7 @@ public class Aluno implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_aluno")	
-	private String codAluno;
+	private Integer codAluno;
 	private String nome;
 	private String cpf;
 	private String email;
@@ -76,6 +76,18 @@ public class Aluno implements Serializable{
 
 	public void setDataMatricula(String dataMatricula) {
 		matricula = matricula;
+	}
+
+	public Integer getCodAluno() {
+		return codAluno;
+	}
+
+	public void setCodAluno(Integer codAluno) {
+		this.codAluno = codAluno;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 
 }

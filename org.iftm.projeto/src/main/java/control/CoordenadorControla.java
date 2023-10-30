@@ -14,7 +14,7 @@ public class CoordenadorControla {
 	public CoordenadorControla() {
 		super();
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("secretariaiftm2");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("projeto");
 		emf.createEntityManager();
 	}
 	

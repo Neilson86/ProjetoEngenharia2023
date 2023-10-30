@@ -14,8 +14,8 @@ public class DisciplinaControla {
 	public DisciplinaControla() {
 		super();
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("secretariaiftm2");
-		emf.createEntityManager();
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("projeto");
+		em = emf.createEntityManager();
 	}
 	
 	public void inserir(Disciplina obj) {
