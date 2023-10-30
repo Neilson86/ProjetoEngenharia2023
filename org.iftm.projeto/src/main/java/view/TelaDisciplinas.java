@@ -20,7 +20,7 @@ public class TelaDisciplinas extends JInternalFrame {
 	private JTextField textFieldNome;
 	private JTextField textFieldCargaHoraria;
 	private JTextField textFieldDisciplinaCadastrada;
-	private JTextField textField;
+	private JTextField textFieldSala;
 
 	/**
 	 * Launch the application.
@@ -92,10 +92,10 @@ public class TelaDisciplinas extends JInternalFrame {
 		lblSala.setBounds(10, 139, 57, 14);
 		painelCampos.add(lblSala);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(160, 136, 255, 20);
-		painelCampos.add(textField);
+		textFieldSala = new JTextField();
+		textFieldSala.setColumns(10);
+		textFieldSala.setBounds(160, 136, 255, 20);
+		painelCampos.add(textFieldSala);
 		
 		JButton btnSALVAR = new JButton("SALVAR");
 		btnSALVAR.setBounds(271, 367, 89, 23);

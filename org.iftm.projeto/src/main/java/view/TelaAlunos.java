@@ -21,6 +21,11 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 public class TelaAlunos extends JInternalFrame {
+	//atributos do projeto//
+	
+	private Aluno Aluno;
+	private AlunoControla controla = new  AlunoControla(); 
+	
 	private JTextField txtNome;
 	private JTextField txtCpf;
 	private JTextField txtEmail;
@@ -66,6 +71,7 @@ public class TelaAlunos extends JInternalFrame {
 		painelCampos.add(lblNOME);
 		
 		txtNome = new JTextField();
+		txtNome.setEnabled(false);
 		txtNome.setColumns(10);
 		txtNome.setBounds(92, 50, 393, 20);
 		painelCampos.add(txtNome);
@@ -76,11 +82,13 @@ public class TelaAlunos extends JInternalFrame {
 		painelCampos.add(lblCPF);
 		
 		txtCpf = new JTextField();
+		txtCpf.setEnabled(false);
 		txtCpf.setColumns(10);
 		txtCpf.setBounds(92, 84, 393, 20);
 		painelCampos.add(txtCpf);
 		
 		txtEmail = new JTextField();
+		txtEmail.setEnabled(false);
 		txtEmail.setColumns(10);
 		txtEmail.setBounds(102, 122, 383, 20);
 		painelCampos.add(txtEmail);
@@ -96,6 +104,7 @@ public class TelaAlunos extends JInternalFrame {
 		painelCampos.add(lblDataNascimento);
 		
 		txtDataNascimento = new JTextField();
+		txtDataNascimento.setEnabled(false);
 		txtDataNascimento.setColumns(10);
 		txtDataNascimento.setBounds(324, 170, 161, 20);
 		painelCampos.add(txtDataNascimento);
@@ -106,15 +115,27 @@ public class TelaAlunos extends JInternalFrame {
 		painelCampos.add(lblDataMatricula);
 		
 		txtDataMatricula = new JTextField();
+		txtDataMatricula.setEnabled(false);
 		txtDataMatricula.setColumns(10);
 		txtDataMatricula.setBounds(324, 214, 161, 20);
 		painelCampos.add(txtDataMatricula);
 		
-		JButton btnSALVAR = new JButton("SALVAR");
+		final JButton btnSALVAR = new JButton("SALVAR");
+		btnSALVAR.setEnabled(false);
 		btnSALVAR.setBounds(399, 244, 89, 23);
 		painelCampos.add(btnSALVAR);
 		btnSALVAR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (txtNome.getText().equals("")) {
+					JOptionPane.showMessageDialog(btnSALVAR, "O nome precisa ter está preenchido ");
+				}else {
+					aluno.setNome(txtNome.getText());
+					aluno.setCpf(txtCpf.getText());
+					controle.inserir(aluno);
+					JOptionPane.showMessageDialog(btnSALVAR,"Aluno cadastrado");
+					txtNome.setEnabled(false);
+					txtEmail.setEnabled(false);
+				}
 			}
 		});
 		btnSALVAR.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -168,9 +189,13 @@ public class TelaAlunos extends JInternalFrame {
 		btnAlterar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		JButton btnExcluir = new JButton("EXCLUIR");
+		btnExcluir.setEnabled(false);
 		btnExcluir.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(aluno != null) {
+					controle.excluir(aluno);
+				}
 			}
 		});
 		btnExcluir.setBounds(528, 175, 101, 21);
@@ -180,11 +205,26 @@ public class TelaAlunos extends JInternalFrame {
 		btnNOVO.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNOVO.setBounds(528, 76, 101, 21);
 		getContentPane().add(btnNOVO);
+			
 		
 		JButton btnSAIR = new JButton("SAIR");
 		btnSAIR.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnSAIR.setBounds(528, 281, 101, 21);
 		getContentPane().add(btnSAIR);
 
+	}
+	private void definirEstadoInicial() {
+		txtNome.setText("");
+		txtNome.setEnabled(false);
+		txtCpf.setText("");
+		txtCpf.setEnabled(false);
+		txtEmail.setText("");
+		txtEmail.setEnabled(false);
+		txtDataNascimento.setText("");
+		txtDataNascimento.setEnabled(false);
+		txtDataMatricula.setText("");
+		txtDataMatricula.setEnabled(false);
+		
+		
 	}
 }

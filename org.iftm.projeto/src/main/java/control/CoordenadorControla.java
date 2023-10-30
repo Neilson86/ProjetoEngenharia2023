@@ -15,7 +15,7 @@ public class CoordenadorControla {
 		super();
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("projeto");
-		emf.createEntityManager();
+		em = emf.createEntityManager();
 	}
 	
 	public void inserir(Coordenador obj) {
