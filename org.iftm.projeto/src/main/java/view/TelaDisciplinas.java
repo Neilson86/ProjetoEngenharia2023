@@ -9,6 +9,12 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
+
+import control.AlunoControla;
+import control.DisciplinaControla;
+import model.Aluno;
+import model.Disciplina;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.border.EtchedBorder;
@@ -17,6 +23,11 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 public class TelaDisciplinas extends JInternalFrame {
+	
+	private Disciplina Disciplina;
+	private DisciplinaControla controle = new DisciplinaControla();
+	Disciplina disciplina;
+	
 	private JTextField textFieldNome;
 	private JTextField textFieldCargaHoraria;
 	private JTextField textFieldDisciplinaCadastrada;
@@ -112,21 +123,21 @@ public class TelaDisciplinas extends JInternalFrame {
 		lblPROFESSOR.setBounds(10, 47, 78, 13);
 		getContentPane().add(lblPROFESSOR);
 		
-		JComboBox comboBoxPROFESSOR = new JComboBox();
-		comboBoxPROFESSOR.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		comboBoxPROFESSOR.setModel(new DefaultComboBoxModel(new String[] {"Insira um nome", "Bruno", "Elisa", "Maria D' Lourdes", "Wilton", "Andr\u00E9 Souza", "Andr\u00E9 Lemos", "Wesley", "Ant\u00F4nio", "Marcos", "J\u00FAlia"}));
-		comboBoxPROFESSOR.setBounds(86, 43, 334, 21);
-		getContentPane().add(comboBoxPROFESSOR);
+		JComboBox cbPROFESSOR = new JComboBox();
+		cbPROFESSOR.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		cbPROFESSOR.setModel(new DefaultComboBoxModel(new String[] {"Insira um nome", "Bruno", "Elisa", "Maria D' Lourdes", "Wilton", "Andr\u00E9 Souza", "Andr\u00E9 Lemos", "Wesley", "Ant\u00F4nio", "Marcos", "J\u00FAlia"}));
+		cbPROFESSOR.setBounds(86, 43, 334, 21);
+		getContentPane().add(cbPROFESSOR);
 		
 		JLabel lblCURSO = new JLabel("CURSO: ");
 		lblCURSO.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCURSO.setBounds(11, 97, 78, 13);
 		getContentPane().add(lblCURSO);
 		
-		JComboBox comboBoxCURSO = new JComboBox();
-		comboBoxCURSO.setModel(new DefaultComboBoxModel(new String[] {"Insira um nome", "Computa\u00E7\u00E3o", "Web Design", "Mecatr\u00F4nica", "Banco de Dados", "Engenharia de Software", "Java", "Phyton", "MSQL Server"}));
-		comboBoxCURSO.setBounds(87, 93, 334, 21);
-		getContentPane().add(comboBoxCURSO);
+		JComboBox cbCURSO = new JComboBox();
+		cbCURSO.setModel(new DefaultComboBoxModel(new String[] {"Insira um nome", "Computa\u00E7\u00E3o", "Web Design", "Mecatr\u00F4nica", "Banco de Dados", "Engenharia de Software", "Java", "Phyton", "MSQL Server"}));
+		cbCURSO.setBounds(87, 93, 334, 21);
+		getContentPane().add(cbCURSO);
 
 	}
 }

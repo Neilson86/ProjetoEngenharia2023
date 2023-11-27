@@ -9,6 +9,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
+
+import control.DisciplinaControla;
+import control.ProfessorControla;
+import model.Disciplina;
+import model.Professor;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -16,8 +22,14 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 
 public class TelaProfessores extends JInternalFrame {
+
+	private Professor Professor;
+	private ProfessorControla controla = new ProfessorControla();
+	Professor professor;
+	
 	private JTextField textFieldNOME;
 	private JTextField textCPF;
+	private JTextField textDISCIPLINACADASTRADA;
 
 	/**
 	 * Launch the application.

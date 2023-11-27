@@ -23,9 +23,8 @@ import java.awt.Color;
 
 public class TelaAlunos extends JInternalFrame {
 	//atributos do projeto//
-	
-	private Aluno Aluno;
-	private AlunoControla controla = new  AlunoControla(); 
+	private AlunoControla controle = new AlunoControla();
+	Aluno aluno;
 	
 	private JTextField txtNome;
 	private JTextField txtCpf;
@@ -34,9 +33,7 @@ public class TelaAlunos extends JInternalFrame {
 	private JTextField txtDataMatricula;
 	private JLabel lblCodigo;
 	
-	private AlunoControla controle = new AlunoControla();
-	Aluno aluno;
-
+	
 	/**
 	 * Launch the application.
 	 */

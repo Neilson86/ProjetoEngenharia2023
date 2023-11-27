@@ -18,6 +18,7 @@ public class Curso implements Serializable{
 	
 	private Integer idCurso;
 	private String nome;
+	@Column(name="carga_horaria")
 	private Float cargaHoraria;
 	//private Integer idCoordenador;
 	
@@ -54,6 +55,12 @@ public class Curso implements Serializable{
 
 	public void setCargaHoraria(Float cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
+	}
+
+	//método que imprime o objeto,gera um texto para isso
+	@Override
+	public String toString() {
+		return idCurso + "-" + nome;
 	}
 	
 	
