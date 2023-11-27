@@ -114,7 +114,7 @@ public class TelaConsultarCurso extends JInternalFrame {
 		panel.setLayout(null);
 		
 		TxtCargaHoraria = new JTextField();
-		TxtCargaHoraria.setText("fsfdsdfsfs");
+		TxtCargaHoraria.setText("");
 		TxtCargaHoraria.setFont(new Font("Tahoma", Font.BOLD, 15));
 		TxtCargaHoraria.setEnabled(false);
 		TxtCargaHoraria.setBounds(10, 21, 263, 19);

@@ -96,7 +96,7 @@ public class TelaPrincipal {
 		CADASTRAR_CURSO.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				GerirCurso tela = new GerirCurso();
+				TelaCurso tela = new TelaCurso();
 				tela.setVisible(true);
 				desktopPane.add(tela);
 			}
