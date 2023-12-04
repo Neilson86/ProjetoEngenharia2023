@@ -10,6 +10,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import control.MatriculaControla;
 import control.ProfessorControla;
 import model.Professor;
 
@@ -20,7 +21,8 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 
 public class TelaRealizarMatricula extends JInternalFrame {
-	
+	private TelaRealizarMatricula objeto;
+	private MatriculaControla control = new MatriculaControla();
 	
 	private JTextField textNome;
 	private JTextField textCPF;

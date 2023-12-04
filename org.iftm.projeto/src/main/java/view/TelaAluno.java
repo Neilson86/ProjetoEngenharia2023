@@ -23,6 +23,7 @@ import java.awt.Color;
 
 public class TelaAluno extends JInternalFrame {
 	//atributos do projeto//
+	private TelaAluno objeto;
 	private AlunoControla controle = new AlunoControla();
 	Aluno aluno;
 	

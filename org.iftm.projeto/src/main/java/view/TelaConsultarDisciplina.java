@@ -6,6 +6,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import control.DisciplinaControla;
 import model.Curso;
 import model.Disciplina;
 
@@ -21,7 +22,8 @@ import java.util.ArrayList;
 import javax.swing.SwingConstants;
 
 public class TelaConsultarDisciplina extends JInternalFrame {
-	
+	private TelaConsultarDisciplina objeto;
+	private DisciplinaControla controla = new DisciplinaControla();
 
 	
 	private JTextField textcodigo;

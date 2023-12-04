@@ -97,7 +97,7 @@ public class TelaProfessor extends JInternalFrame {
 		textSenha.setBounds(60, 150, 332, 20);
 		painelCampos.add(textSenha);
 		
-		JLabel lblTitulo = new JLabel("CADASTRAR PROFESSOR");
+		JLabel lblTitulo = new JLabel("PROFESSOR");
 		lblTitulo.setBounds(109, 10, 235, 20);
 		getContentPane().add(lblTitulo);
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);

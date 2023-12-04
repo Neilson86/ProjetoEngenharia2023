@@ -8,13 +8,19 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
+
+import control.CursoControla;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 public class TelaCurso extends JInternalFrame {
-	private JTextField textField;
-	private JTextField textField_1;
+	private TelaCurso objeto;
+	private CursoControla controle = new CursoControla();
+	
+	private JTextField textNome;
+	private JTextField textCargaHoraria;
 
 	/**
 	 * Launch the application.
@@ -50,20 +56,20 @@ public class TelaCurso extends JInternalFrame {
 		lblNOME.setBounds(20, 50, 46, 14);
 		painelCampos.add(lblNOME);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(60, 48, 332, 20);
-		painelCampos.add(textField);
+		textNome = new JTextField();
+		textNome.setColumns(10);
+		textNome.setBounds(65, 48, 332, 20);
+		painelCampos.add(textNome);
 		
 		JLabel lblCPF = new JLabel("CARGA HORÁRIA: ");
 		lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCPF.setBounds(23, 97, 101, 14);
 		painelCampos.add(lblCPF);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(121, 95, 271, 20);
-		painelCampos.add(textField_1);
+		textCargaHoraria = new JTextField();
+		textCargaHoraria.setColumns(10);
+		textCargaHoraria.setBounds(121, 95, 271, 20);
+		painelCampos.add(textCargaHoraria);
 		
 		JButton btnSALVAR = new JButton("SALVAR");
 		btnSALVAR.setFont(new Font("Tahoma", Font.PLAIN, 12));

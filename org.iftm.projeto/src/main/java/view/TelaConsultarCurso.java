@@ -30,7 +30,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class TelaConsultarCurso extends JInternalFrame {
-	
+	private TelaConsultarCurso objeto;
 	private CursoControla controla = new CursoControla();
 	ArrayList<Curso> cursos;
 	Curso curso;

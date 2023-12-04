@@ -22,7 +22,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 
 public class TelaGerirProfessores extends JInternalFrame {
-
+	
 	private Professor Professor;
 	private ProfessorControla controla = new ProfessorControla();
 	Professor professor;
