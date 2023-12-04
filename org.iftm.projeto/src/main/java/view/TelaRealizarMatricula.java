@@ -47,7 +47,7 @@ public class TelaRealizarMatricula extends JInternalFrame {
 	public TelaRealizarMatricula() {
 		setBounds(100, 100, 450, 300);
 		
-		JLabel lblRequererMatricula = new JLabel("REQUERER MATRICULA");
+		JLabel lblRequererMatricula = new JLabel("REALIZAR MATRICULA");
 		lblRequererMatricula.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRequererMatricula.setFont(new Font("Tahoma", Font.BOLD, 16));
 		getContentPane().add(lblRequererMatricula, BorderLayout.NORTH);

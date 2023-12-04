@@ -22,7 +22,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class TelaDisciplinas extends JInternalFrame {
+public class TelaCadastrarDisciplinas extends JInternalFrame {
 	
 	private Disciplina Disciplina;
 	private DisciplinaControla controle = new DisciplinaControla();
@@ -40,7 +40,7 @@ public class TelaDisciplinas extends JInternalFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaDisciplinas frame = new TelaDisciplinas();
+					TelaCadastrarDisciplinas frame = new TelaCadastrarDisciplinas();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +52,7 @@ public class TelaDisciplinas extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaDisciplinas() {
+	public TelaCadastrarDisciplinas() {
 		setBounds(100, 100, 530, 450);
 		getContentPane().setLayout(null);
 		

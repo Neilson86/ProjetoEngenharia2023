@@ -21,7 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 
-public class TelaProfessores extends JInternalFrame {
+public class TelaGerirProfessores extends JInternalFrame {
 
 	private Professor Professor;
 	private ProfessorControla controla = new ProfessorControla();
@@ -38,7 +38,7 @@ public class TelaProfessores extends JInternalFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaProfessores frame = new TelaProfessores();
+					TelaGerirProfessores frame = new TelaGerirProfessores();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class TelaProfessores extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaProfessores() {
+	public TelaGerirProfessores() {
 		setBounds(100, 100, 546, 387);
 		getContentPane().setLayout(null);
 		

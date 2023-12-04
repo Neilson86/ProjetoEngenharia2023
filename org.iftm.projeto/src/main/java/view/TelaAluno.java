@@ -21,7 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-public class TelaGerirDadosAlunos extends JInternalFrame {
+public class TelaAluno extends JInternalFrame {
 	//atributos do projeto//
 	private AlunoControla controle = new AlunoControla();
 	Aluno aluno;
@@ -53,13 +53,13 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaGerirDadosAlunos() {
+	public TelaAluno() {
 		setBounds(100, 100, 770, 485);
 		getContentPane().setLayout(null);
 		
 		JPanel painelCampos = new JPanel();
 		painelCampos.setLayout(null);
-		painelCampos.setBorder(new TitledBorder(null, "GERIR DADOS ALUNOS", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		painelCampos.setBorder(new TitledBorder(null, "CADASTRAR ALUNOS", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		painelCampos.setBounds(10, 59, 514, 277);
 		getContentPane().add(painelCampos);
 		

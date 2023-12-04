@@ -62,7 +62,7 @@ public class TelaPrincipal {
 		JMenuItem GERIR_PROFESSORES = new JMenuItem("GERIR PROFESSOR");
 		GERIR_PROFESSORES.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaProfessores tela = new TelaProfessores();
+				TelaGerirProfessores tela = new TelaGerirProfessores();
 				tela.setVisible(true);
 				desktopPane.add(tela);
 			}
@@ -72,7 +72,7 @@ public class TelaPrincipal {
 		JMenuItem CADASTRAR_DISCIPLINAS = new JMenuItem("CADASTAR DISCIPLINA");
 		CADASTRAR_DISCIPLINAS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaDisciplinas tela = new TelaDisciplinas();
+				TelaCadastrarDisciplinas tela = new TelaCadastrarDisciplinas();
 				tela.setVisible(true);
 				desktopPane.add(tela);
 			}
@@ -82,7 +82,7 @@ public class TelaPrincipal {
 		JMenuItem GERIR_DADOS_ALUNOS = new JMenuItem("GERIR DADOS ALUNO");
 		GERIR_DADOS_ALUNOS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaAlunos tela = new TelaAlunos();
+				TelaGerirDadosAlunos tela = new TelaGerirDadosAlunos();
 				tela.setVisible(true);
 				desktopPane.add(tela);
 			}
@@ -107,6 +107,13 @@ public class TelaPrincipal {
 		ATENDENTE.add(CADASTRAR_PROFESSOR);
 		
 		JMenuItem CADASTRAR_ALUNO = new JMenuItem("CADASTRAR ALUNO");
+		CADASTRAR_ALUNO.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaAluno tela = new TelaAluno();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		ATENDENTE.add(CADASTRAR_ALUNO);
 		
 		JMenu ALUNO = new JMenu("ALUNO");
