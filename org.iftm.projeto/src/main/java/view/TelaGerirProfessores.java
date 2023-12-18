@@ -10,12 +10,16 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
+import org.hibernate.annotations.ForeignKey;
+
 import control.DisciplinaControla;
 import control.ProfessorControla;
 import model.Disciplina;
 import model.Professor;
 
 import javax.swing.JTextField;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -23,13 +27,17 @@ import javax.swing.JComboBox;
 
 public class TelaGerirProfessores extends JInternalFrame {
 	
+	@ManyToOne
+	@JoinColumn(name="Coordenador", nullable =false)
+	@ForeignKey(name="Coordenador_fk")
+	
 	private Professor Professor;
-	private ProfessorControla controla = new ProfessorControla();
+	/*private ProfessorControla controla = new ProfessorControla();*/
 	Professor professor;
 	
-	private JTextField textFieldNOME;
-	private JTextField textCPF;
-	private JTextField textDISCIPLINACADASTRADA;
+	private JTextField StringNOME;
+	private JTextField StringCPF;
+	private JTextField StringDISCIPLINACADASTRADA;
 
 	/**
 	 * Launch the application.
@@ -71,20 +79,20 @@ public class TelaGerirProfessores extends JInternalFrame {
 		lblNOME.setBounds(10, 26, 46, 14);
 		painelCampos.add(lblNOME);
 		
-		textFieldNOME = new JTextField();
-		textFieldNOME.setColumns(10);
-		textFieldNOME.setBounds(92, 23, 271, 20);
-		painelCampos.add(textFieldNOME);
+		StringNOME = new JTextField();
+		StringNOME.setColumns(10);
+		StringNOME.setBounds(92, 23, 271, 20);
+		painelCampos.add(StringNOME);
 		
 		JLabel lblCPF = new JLabel("CPF : ");
 		lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCPF.setBounds(10, 60, 46, 14);
 		painelCampos.add(lblCPF);
 		
-		textCPF = new JTextField();
-		textCPF.setColumns(10);
-		textCPF.setBounds(92, 57, 271, 20);
-		painelCampos.add(textCPF);
+		StringCPF = new JTextField();
+		StringCPF.setColumns(10);
+		StringCPF.setBounds(92, 57, 271, 20);
+		painelCampos.add(StringCPF);
 		
 		JLabel lblDISCIPLINACADASTRADA = new JLabel("DISCIPLINA CADASTRADA : ");
 		lblDISCIPLINACADASTRADA.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -92,6 +100,10 @@ public class TelaGerirProfessores extends JInternalFrame {
 		painelCampos.add(lblDISCIPLINACADASTRADA);
 		
 		JButton btnSALVAR = new JButton("SALVAR");
+		btnSALVAR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnSALVAR.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnSALVAR.setBounds(274, 148, 89, 23);
 		painelCampos.add(btnSALVAR);
@@ -100,7 +112,7 @@ public class TelaGerirProfessores extends JInternalFrame {
 		btnEDITAR.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnEDITAR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
+							}
 		});
 		btnEDITAR.setBounds(175, 148, 89, 23);
 		painelCampos.add(btnEDITAR);

@@ -6,6 +6,8 @@ import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import org.hibernate.annotations.ForeignKey;
+
 import control.AlunoControla;
 import model.Aluno;
 
@@ -14,14 +16,21 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
+import javax.swing.JScrollPane;
 
 public class TelaGerirDadosAlunos extends JInternalFrame {
+
+	
 	//atributos do projeto//
 	private TelaGerirDadosAlunos objeto;
 	private AlunoControla controle = new AlunoControla();
@@ -31,8 +40,8 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 	private JTextField txtCpf;
 	private JTextField txtEmail;
 	private JTextField txtDataNascimento;
-	private JTextField txtDataMatricula;
 	private JLabel lblCodigo;
+	private JList listMatriculas;
 	
 	
 	/**
@@ -61,7 +70,7 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 		JPanel painelCampos = new JPanel();
 		painelCampos.setLayout(null);
 		painelCampos.setBorder(new TitledBorder(null, "GERIR DADOS ALUNOS", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		painelCampos.setBounds(10, 59, 514, 277);
+		painelCampos.setBounds(10, 59, 514, 332);
 		getContentPane().add(painelCampos);
 		
 		JLabel lblNOME = new JLabel("NOME : ");
@@ -113,15 +122,9 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 		lblDataMatricula.setBounds(10, 217, 141, 14);
 		painelCampos.add(lblDataMatricula);
 		
-		txtDataMatricula = new JTextField();
-		txtDataMatricula.setEnabled(false);
-		txtDataMatricula.setColumns(10);
-		txtDataMatricula.setBounds(324, 214, 161, 20);
-		painelCampos.add(txtDataMatricula);
-		
 		final JButton btnSALVAR = new JButton("SALVAR");
 		btnSALVAR.setEnabled(false);
-		btnSALVAR.setBounds(399, 244, 89, 23);
+		btnSALVAR.setBounds(396, 299, 89, 23);
 		painelCampos.add(btnSALVAR);
 		btnSALVAR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -146,6 +149,13 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 		lblCodigo.setBounds(403, 27, 82, 13);
 		painelCampos.add(lblCodigo);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(122, 215, 363, 74);
+		painelCampos.add(scrollPane);
+		listMatriculas = new JList();
+		listMatriculas.setEnabled(false);
+		scrollPane.setViewportView(listMatriculas);
+		
 		JLabel lblAlunos = new JLabel("ALUNOS");
 		lblAlunos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAlunos.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -164,7 +174,20 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 					txtCpf.setText(aluno.getCpf().toString());
 					txtEmail.setText(aluno.getEmail().toString());
 					txtDataNascimento.setText(aluno.getDataNascimento().toString());
-					txtDataMatricula.setText(aluno.getMatricula().toString());
+					if (aluno.getMatriculas().size()>0) {
+						AbstractListModel m = new AbstractListModel() {
+							Object[] values = aluno.getMatriculas().toArray();
+							public int getSize() {
+								return values.length;
+							}
+							public Object getElementAt(int index) {
+								return values[index];
+							}
+						};
+						listMatriculas.setModel(m);
+						
+					}
+						
 					btnEDITAR.setEnabled(true);
 				}else {
 				JOptionPane.showMessageDialog(null, "Aluno não encontrado");
@@ -210,6 +233,8 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 		btnSAIR.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnSAIR.setBounds(528, 281, 101, 21);
 		getContentPane().add(btnSAIR);
+		
+		
 
 	}
 	private void definirEstadoInicial() {
@@ -221,8 +246,8 @@ public class TelaGerirDadosAlunos extends JInternalFrame {
 		txtEmail.setEnabled(false);
 		txtDataNascimento.setText("");
 		txtDataNascimento.setEnabled(false);
-		txtDataMatricula.setText("");
-		txtDataMatricula.setEnabled(false);
+		listMatriculas.removeAll();
+		listMatriculas.setEnabled(false);
 		
 		
 	}

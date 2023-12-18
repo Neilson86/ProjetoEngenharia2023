@@ -104,6 +104,13 @@ public class TelaPrincipal {
 		ATENDENTE.add(CADASTRAR_CURSO);
 		
 		JMenuItem CADASTRAR_PROFESSOR = new JMenuItem("CADASTRAR PROFESSOR");
+		CADASTRAR_PROFESSOR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaProfessor tela = new TelaProfessor();
+				tela.setVisible(true);
+				desktopPane.add(tela);
+			}
+		});
 		ATENDENTE.add(CADASTRAR_PROFESSOR);
 		
 		JMenuItem CADASTRAR_ALUNO = new JMenuItem("CADASTRAR ALUNO");

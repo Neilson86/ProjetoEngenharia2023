@@ -10,6 +10,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import org.hibernate.annotations.ForeignKey;
+
 import control.MatriculaControla;
 import control.ProfessorControla;
 import model.Professor;
@@ -18,9 +20,16 @@ import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.swing.JButton;
 
 public class TelaRealizarMatricula extends JInternalFrame {
+	
+	@ManyToOne
+	@JoinColumn(name="Aluno", nullable =false)
+	@ForeignKey(name="Aluno_fk")
+	
 	private TelaRealizarMatricula objeto;
 	private MatriculaControla control = new MatriculaControla();
 	

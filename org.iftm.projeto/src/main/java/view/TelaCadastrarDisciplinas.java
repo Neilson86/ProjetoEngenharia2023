@@ -10,6 +10,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import org.hibernate.annotations.ForeignKey;
+
 import control.AlunoControla;
 import control.DisciplinaControla;
 import model.Aluno;
@@ -20,18 +22,25 @@ import javax.swing.JButton;
 import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import javax.swing.JComboBox;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaCadastrarDisciplinas extends JInternalFrame {
+	
+	@ManyToOne
+	@JoinColumn(name="Coordenador", nullable =false)
+	@ForeignKey(name="Coordenador_fk")
 	
 	private Disciplina Disciplina;
 	private DisciplinaControla controle = new DisciplinaControla();
 	Disciplina disciplina;
 	
-	private JTextField textFieldNome;
-	private JTextField textFieldCargaHoraria;
-	private JTextField textFieldDisciplinaCadastrada;
-	private JTextField textFieldSala;
+	private JTextField textNome;
+	private JTextField textCargaHoraria;
+	private JTextField textDISCIPLINACADASTRADA;
 
 	/**
 	 * Launch the application.
@@ -73,47 +82,50 @@ public class TelaCadastrarDisciplinas extends JInternalFrame {
 		lblNOME.setBounds(10, 26, 46, 14);
 		painelCampos.add(lblNOME);
 		
-		textFieldNome = new JTextField();
-		textFieldNome.setColumns(10);
-		textFieldNome.setBounds(92, 23, 324, 20);
-		painelCampos.add(textFieldNome);
+		textNome = new JTextField();
+		textNome.setColumns(10);
+		textNome.setBounds(98, 24, 353, 20);
+		painelCampos.add(textNome);
 		
 		JLabel lblCARGAHORARIA = new JLabel("CARGA HORÁRIA: ");
 		lblCARGAHORARIA.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCARGAHORARIA.setBounds(10, 60, 106, 14);
 		painelCampos.add(lblCARGAHORARIA);
 		
-		textFieldCargaHoraria = new JTextField();
-		textFieldCargaHoraria.setColumns(10);
-		textFieldCargaHoraria.setBounds(114, 57, 302, 20);
-		painelCampos.add(textFieldCargaHoraria);
-		
-		textFieldDisciplinaCadastrada = new JTextField();
-		textFieldDisciplinaCadastrada.setColumns(10);
-		textFieldDisciplinaCadastrada.setBounds(161, 95, 255, 20);
-		painelCampos.add(textFieldDisciplinaCadastrada);
+		textCargaHoraria = new JTextField();
+		textCargaHoraria.setColumns(10);
+		textCargaHoraria.setBounds(114, 57, 337, 20);
+		painelCampos.add(textCargaHoraria);
 		
 		JLabel lblDISCIPLINACADASTRADA = new JLabel("DISCIPLINA CADASTRADA : ");
 		lblDISCIPLINACADASTRADA.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblDISCIPLINACADASTRADA.setBounds(11, 98, 141, 14);
 		painelCampos.add(lblDISCIPLINACADASTRADA);
 		
-		JLabel lblSala = new JLabel("SALA :\r\n");
-		lblSala.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblSala.setBounds(10, 139, 57, 14);
-		painelCampos.add(lblSala);
-		
-		textFieldSala = new JTextField();
-		textFieldSala.setColumns(10);
-		textFieldSala.setBounds(160, 136, 255, 20);
-		painelCampos.add(textFieldSala);
+		textDISCIPLINACADASTRADA = new JTextField();
+		textDISCIPLINACADASTRADA.setColumns(10);
+		textDISCIPLINACADASTRADA.setBounds(149, 96, 302, 20);
+		painelCampos.add(textDISCIPLINACADASTRADA);
 		
 		JButton btnSALVAR = new JButton("SALVAR");
+		btnSALVAR.addActionListener(new ActionListener() {
+			private JLabel txtNome;
+			private JLabel txtCargaHoraria;
+			private JLabel txtDisciplinaCadastrada;
+			
+			public void actionPerformed(ActionEvent e) {
+				/*Disciplina = new Disciplina(null,txtNome.getText(),txtCargaHoraria.getText(),txtDisciplinaCadastrada.getText(),);	*/		}
+		});
 		btnSALVAR.setBounds(271, 367, 89, 23);
 		getContentPane().add(btnSALVAR);
 		btnSALVAR.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		JButton btnEDITAR = new JButton("EDITAR");
+		btnEDITAR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Disciplina =new Disciplina(null,, null)*/
+			}
+		});
 		btnEDITAR.setBounds(157, 367, 89, 23);
 		getContentPane().add(btnEDITAR);
 		btnEDITAR.setFont(new Font("Tahoma", Font.PLAIN, 12));

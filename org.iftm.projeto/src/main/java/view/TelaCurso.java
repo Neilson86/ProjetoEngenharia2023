@@ -5,17 +5,33 @@ import java.awt.EventQueue;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.ForeignKey;
+
 import control.CursoControla;
 
 import javax.swing.JTextField;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 public class TelaCurso extends JInternalFrame {
+	
+	@ManyToOne
+	@JoinColumn(name="Disciplina", nullable =false)
+	@JoinColumn(name="Matricula", nullable =false)
+	@JoinColumn(name="Professor", nullable =false)
+	@ForeignKey(name="Disciplina_fk, Matricula_fk,Professor_fk")
+	
 	private TelaCurso objeto;
 	private CursoControla controle = new CursoControla();
 	
@@ -87,6 +103,14 @@ public class TelaCurso extends JInternalFrame {
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 16));
 
+	}
+
+	public List<view.TelaProfessor> getTelaProfessor() {
+		return getTelaProfessor();
+	}
+
+	public void setTelaProfessor(List<view.TelaProfessor> telaProfessor) {
+		List<TelaProfessor> TelaProfessor = telaProfessor;
 	}
 
 }

@@ -6,6 +6,8 @@ import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import org.hibernate.annotations.ForeignKey;
+
 import control.DisciplinaControla;
 import model.Curso;
 import model.Disciplina;
@@ -13,6 +15,8 @@ import model.Disciplina;
 import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import javax.swing.JComboBox;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -22,6 +26,11 @@ import java.util.ArrayList;
 import javax.swing.SwingConstants;
 
 public class TelaConsultarDisciplina extends JInternalFrame {
+	
+	@ManyToOne
+	@JoinColumn(name="Aluno", nullable =false)
+	@ForeignKey(name="Aluno_fk")
+	
 	private TelaConsultarDisciplina objeto;
 	private DisciplinaControla controla = new DisciplinaControla();
 

@@ -8,6 +8,8 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import org.hibernate.annotations.ForeignKey;
+
 import control.AlunoControla;
 import control.CursoControla;
 import model.Aluno;
@@ -25,11 +27,19 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.event.ActionEvent;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class TelaConsultarCurso extends JInternalFrame {
+	
+	@ManyToOne
+	@JoinColumn(name="Aluno", nullable =false)
+	@ForeignKey(name="Aluno_fk")
+	
 	private TelaConsultarCurso objeto;
 	private CursoControla controla = new CursoControla();
 	ArrayList<Curso> cursos;

@@ -3,16 +3,25 @@ package model;
 import java.io.Serializable;
 import java.sql.Date;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Cascade;
+
+import view.TelaCurso;
 
 @Entity
 public class Aluno implements Serializable{
 	private static final long serialVersionUID = 1L;
+	
+	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,15 +33,22 @@ public class Aluno implements Serializable{
 	
 	@Column(name="data_nasc")
 	private Instant dataNascimento;
-	private String matricula;
 	
-	public Aluno(String nome, String cpf, String email, Instant dataNascimento, String matricula) {
+	@OneToMany(mappedBy = "aluno")
+    private List<Matricula> matriculas;
+	
+	
+	
+
+	public Aluno(Integer codAluno, String nome, String cpf, String email, Instant dataNascimento,
+			List<Matricula> matriculas) {
 		super();
+		this.codAluno = codAluno;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 		this.dataNascimento = dataNascimento;
-		this.matricula = matricula;
+		this.matriculas = matriculas;
 	}
 
 	public Aluno() {
@@ -70,14 +86,6 @@ public class Aluno implements Serializable{
 		dataNascimento = dataNascimento;
 	}
 
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setDataMatricula(String dataMatricula) {
-		matricula = matricula;
-	}
-
 	public Integer getCodAluno() {
 		return codAluno;
 	}
@@ -86,8 +94,13 @@ public class Aluno implements Serializable{
 		this.codAluno = codAluno;
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public List<Matricula> getMatriculas() {
+		return matriculas;
 	}
+
+	public void setMatriculas(List<Matricula> matriculas) {
+		this.matriculas = matriculas;
+	}
+
 
 }

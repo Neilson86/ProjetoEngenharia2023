@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.SwingConstants;
@@ -22,6 +24,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 public class TelaAluno extends JInternalFrame {
+	
 	//atributos do projeto//
 	private TelaAluno objeto;
 	private AlunoControla controle = new AlunoControla();
@@ -164,7 +167,8 @@ public class TelaAluno extends JInternalFrame {
 					txtCpf.setText(aluno.getCpf().toString());
 					txtEmail.setText(aluno.getEmail().toString());
 					txtDataNascimento.setText(aluno.getDataNascimento().toString());
-					txtDataMatricula.setText(aluno.getMatricula().toString());
+					if (aluno.getMatriculas().size()>0)
+						txtDataMatricula.setText(aluno.getMatriculas().get(0).getIdMatricula().toString());
 					btnEDITAR.setEnabled(true);
 				}else {
 				JOptionPane.showMessageDialog(null, "Aluno não encontrado");

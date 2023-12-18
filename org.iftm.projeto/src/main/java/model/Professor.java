@@ -1,44 +1,55 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 public class Professor implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_Professor")
-	private Integer idProfessor;
+	private String idProfessor;
 	
 	private String nome;
-	private Integer CPF;
+	private String CPF;
 	private String Senha;
 	// private Integer idCoordenador;
 
-	public Professor(Integer idProfessor, String nome, Integer cPF, String senha) {
+	public Professor(String idProfessor, String nome, String string, String senha) {
 		super();
 		this.idProfessor = idProfessor;
 		this.nome = nome;
-		CPF = cPF;
-		Senha = senha;
+		this.CPF = string;
+		this.Senha = senha;
 	}
 
 	public Professor() {
 
 	}
 
-	public Integer getIdProfessor() {
+	public Professor(Object idProfessor2, String nome2, int i, String senha2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getIdProfessor() {
 		return idProfessor;
 	}
 
-	public void setIdProfessor(Integer idProfessor) {
+	public void setIdProfessor(String idProfessor) {
 		this.idProfessor = idProfessor;
 	}
 
@@ -50,12 +61,12 @@ public class Professor implements Serializable{
 		this.nome = nome;
 	}
 
-	public Integer getCPF() {
+	public Serializable getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(Integer cPF) {
-		CPF = cPF;
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
 	}
 
 	public String getSenha() {
